@@ -1,0 +1,6 @@
+1 Clean_Code Robert_C_Martin 464 Software_Engineering Book 3
+2 The_Pragmatic_Programmer Andrew_Hunt 352 Software_Engineering Book 2
+3 Design_Patterns Erich_Gamma 395 Software_Engineering Book 2
+4 Refactoring Martin_Fowler 448 Software_Engineering Book 3
+5 AI_Thesis John_Doe 120 Artificial_Intelligence Thesis 1
+6 Deep_Learning_Survey Jane_Roe 30 Machine_Learning ResearchPaper 0
