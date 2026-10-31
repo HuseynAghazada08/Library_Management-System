@@ -281,25 +281,29 @@ public class Library {
      * Severely damaged items are moved to the archive.
      */
     public void performRepairCheck() {
-        ArrayList<Items> toArchive = new ArrayList<>();
+    ArrayList<Items> toArchive = new ArrayList<>();
 
-        for (Items i : items) {
-            if (i.getStatus() == ItemStatus.NEEDS_REPAIR) {
-                repairsSection.sendToRepair(i);
+    for (Items i : items) {
+        if (i.getStatus() == ItemStatus.NEEDS_REPAIR) {
+            repairsSection.sendToRepair(i);
+        }
 
-                boolean archived = repairsSection.repairItem(i);
+        if (i.getStatus() == ItemStatus.BEING_REPAIRED) {
+            boolean archived = repairsSection.repairItem(i);
 
-                if (archived) {
-                    toArchive.add(i);
-                }
+            if (archived) {
+                toArchive.add(i);
             }
         }
-
-        for (Items i : toArchive) {
-            items.remove(i);
-            archivedItems.add(i);
-        }
     }
+
+    for (Items i : toArchive) {
+        items.remove(i);
+        archivedItems.add(i);
+    }
+}
+
+    
 
     /**
      * Finds the most popular item based on borrow count.
